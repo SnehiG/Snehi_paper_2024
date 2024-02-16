@@ -11,7 +11,5 @@ for species in Arabidopsis Poplar; do
    ln -s RAW_DATA/$species/${accession}_1.fastq links/$species/${library}_1.fastq
    ln -s RAW_DATA/$species/${accession}_2.fastq links/$species/${library}_2.fastq
  done
- 
- 
 done
 
