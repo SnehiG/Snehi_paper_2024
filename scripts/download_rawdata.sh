@@ -1,5 +1,5 @@
 # Download file from SRA using sra-toolkit
-## Arabidopsis ##
+
 for species in Arabidopsis Poplar; do
  mkdir -p RAW_DATA/$species links/$species
  cut -f 1,7 metadata/PRJNA1072118_$species.tsv |
