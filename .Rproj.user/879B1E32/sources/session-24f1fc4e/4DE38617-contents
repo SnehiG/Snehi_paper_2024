@@ -1,0 +1,12 @@
+# Download file from SRA using sra-toolkit
+## Arabidopsis ##
+for species in 
+mkdir -p RAW_DATA/Arabidopsis
+cut -f 1 metadata/PRJNA1072118_arabidopsis.tsv |
+ while read accession; do
+  fasterq-dump --seq-defline '@$sn[_$rn]/$ri'\
+   --split-files $accession\
+   --outdir RAW_DATA/Arabidopsis;
+done
+
+## Arabidopsis ##
