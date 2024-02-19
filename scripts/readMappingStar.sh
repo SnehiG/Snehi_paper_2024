@@ -42,7 +42,7 @@ for SPECIES in Arabidopsis Poplar; do
 	
 	        r2=${r2s[i]}
 	        r1_basename=$(basename ${r2/.gz})
-	        outPrefix=${r1_basename/_1.fastq}
+	        outPrefix=${r1_basename/1.fastq}
 	
 	        # Run the alignment
 	        STAR --genomeDir $indexDIR/\
