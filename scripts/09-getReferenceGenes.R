@@ -30,7 +30,7 @@ library(CustomSelection)
 
 customRefs = sapply(SPECIES, simplify = F, \(curSpecies) {
 	countsData = 
-		read.csv(file = paste0("counts/", curSpecies, ".csv"), 
+		read.csv(file = paste0(curSpecies, "/counts.csv"), 
 			 header = T, row.names = 1)
 	metadata = read.csv(paste0("metadata/DESeq_", curSpecies, ".tsv"))
 
@@ -53,14 +53,14 @@ customRefs = sapply(SPECIES, simplify = F, \(curSpecies) {
 	
 	write.table(data.frame(DAFS_result = unname(cutv),
 			       Sample = names(cutv)),
-		    file = paste0("counts/", curSpecies, 
+		    file = paste0(curSpecies,  
 		    	      "/MinimumExpression_log2TPM.tsv"),
 		    row.names = T, 
 		    quote = F, sep = "\t", append = F)
 	
 	resultCustomRefs = gene_selection(tpm, cutv)
 	write.table(resultCustomRefs, 
-		    file = paste0("counts/", curSpecies,
+		    file = paste0(curSpecies,
 		    	      "/resultsCustomSelection.tsv"),
 		    row.names = T, col.names = c("Mean_TPM", "Coefficient_Variance"),
 		    quote = F, sep = "\t", append = F)
@@ -98,6 +98,7 @@ joinedInfoRefs = lapply(SPECIES, \(curSpecies) {
 # join the two plots into a single figure with ggarrange from the package ggpubr
 ggarrange(plotlist = list(Mean_plot, CoefVar_plot),
 	  ncol = 2)
+
 ggsave("plots/Mean_coefVar_references.pdf")
 
 ### Reference annotation
