@@ -19,11 +19,12 @@ biomart = "plants_mart"
 prefix = "ensembl_"
 host = "https://plants.ensembl.org"
 dir = "."
-
+species = c("Arabidopsis", "Poplar")
 dataset = c("athaliana_eg_gene", "ptrichocarpa_eg_gene")
-outputPath = paste0(dir, c("Arabidopsis", "Poplar"), "_TxDb.RData")
+outputPath = paste0(dir, species , "/", species, "_TxDb.RData")
 
 for (i in 1:2) {
+	dir.create(species[i])
 	TxDb <- makeTxDbFromBiomart(biomart = biomart,
 				    dataset = dataset[i],
 				    id_prefix = prefix,
