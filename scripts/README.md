@@ -7,7 +7,7 @@
 - For the plots, when one figure is saved per species, the name is shown as SPECIES...
 - Some files are saved with the date of analysis in the file name, here the name is shown as ...DATE.OF.ANALYSIS...
 - Figures exported as both pdf and tiff are shown with the extension (pdf|tiff)
-- Two script files, not present in the list below, were used. These are useful for more than the current analysis and thus were made public as github gists.
+- Two scripts (FUNCTIONS_GOplots.R and getSemData.R) are also available as gists:
   1. [getSemData.R](https://gist.github.com/KarenGoncalves/e1b37865d5f6bdeff1c8c490ba8df963): collects the GO term information for Arabidopsis for calculation of similarity between GOterms
   2. [FUNCTIONS_GOplots.R](https://gist.github.com/KarenGoncalves/95b6b81ef391d85b4fb5f8866cb448c3): creates functions that are used in the scripts 13 and 14 below.
 
